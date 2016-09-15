@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<h:head>
+	<title>Veiculos</title>
+</h:head>
+
+<h:body>
+	<p:messages closable="true" />
+
+	<h:form id="Cadastro">
+		<p:commandLink value="Voltar" ajax="false" immediate="true"
+			action="index.xhtml" />
+		<p:panelGrid columns="2">
+
+			<h:outputText value="Descrição Veiculo *" />
+			<p:inputText value="#{veiculoController.veiculo.modelo_veiculo}" required="true"
+				requiredMessage=" O Campo Descrição é Obrigatorio" />
+			
+			<h:outputText value="Placa Do Veiculo *" />
+			<p:inputText value="#{veiculoController.veiculo.placa_veiculo}"
+				required="true" requiredMessage=" O Campo Placa é Obrigatorio" />
+				
+			<h:outputText value="Fabricante *" />
+			<p:inputText value="#{veiculoController.veiculo.marca_veiculo}"
+				required="true" requiredMessage="Campo Fabricante Obrigatorio" />
+
+			<h:outputText value="Ano Fabricação Veiculo *" />
+			<p:inputText value="#{veiculoController.veiculo.ano_fabr_veiculo}"
+				required="true" requiredMessage=" O Campo Ano de Fabricação Obrigatorio" />
+				
+			
+
+			<p:commandButton value="Salvar"
+				action="#{veiculoController.salvarVeiculo}" ajax="false" />
+			<p:commandButton value="Limpar" action="Veiculos.xhtml" immediate="true"
+				ajax="false" />
+
+			
+		</p:panelGrid>
+	</h:form>
+
+
+</h:body>
+
+</html>
